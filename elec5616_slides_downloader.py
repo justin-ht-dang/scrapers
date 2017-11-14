@@ -1,6 +1,4 @@
-import requests
-import ssl
-import time
+import requests, ssl, time, os
 from bs4 import BeautifulSoup
 from urllib.request import urlopen
 from urllib.parse import urljoin
@@ -40,11 +38,14 @@ def main():
 
     url_list = select_url(get_links('https://elec5616.com/lectures.html'))
 
+    if not os.path.exists('lectures'):
+        os.makedirs('lectures')
+
     lecture_count = 1
 
     for pdf in url_list:
 
-        download_pdf(pdf, './lectures/lecture' + str(lecture_count))
+        #download_pdf(pdf, './lectures/lecture' + str(lecture_count))
 
         print('Lecture ' + str(lecture_count) + ' downloaded')
         lecture_count += 1
