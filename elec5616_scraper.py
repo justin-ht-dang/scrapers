@@ -15,7 +15,7 @@ def download_pdf(url, path):
 def select_url(lst):
 
     lst = filter(None, lst)
-    selected = [i for i in lst if 'static/lectures' in i]
+    selected = [i for i in lst if 'static/lectures' in i and i.endswith('.pdf')]
 
     return selected
 
