@@ -45,7 +45,7 @@ def main():
 
     for pdf in url_list:
 
-        #download_pdf(pdf, './lectures/lecture' + str(lecture_count))
+        download_pdf(pdf, './lectures/lecture' + str(lecture_count))
 
         print('Lecture ' + str(lecture_count) + ' downloaded')
         lecture_count += 1
